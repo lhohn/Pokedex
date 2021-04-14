@@ -8,8 +8,9 @@ namespace Pokedex.Playground
     {
         static void Main(string[] args)
         {
-            PokeData pd = new PokeData();
-            GetPoke(pd,"1").Display();
+            //PokeData pd = new PokeData();
+            RSPokeData rsp = new RSPokeData();
+            GetPoke(rsp,"1").Display();
         }
         private static Pokemon GetPoke(IPokeRepository poke, string name)
         {

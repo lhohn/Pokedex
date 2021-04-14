@@ -1,17 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Net;
 using System.Net.Http;
-using System.Net.Http.Headers;
-using System.Text;
 using System.Threading.Tasks;
 using Pokedex.Backend.Models;
 using Pokedex.Backend.Repo;
-using static Pokedex.Backend.Models.Pokemon;
+
 
 namespace Pokedex.Backend.Data
 {
-     public class PokeData : IPokeRepository
+    public class PokeData : IPokeRepository
     {
         private static string apiUrl = @"https://pokeapi.co/api/v2/pokemon/";
         static HttpClient client;
@@ -36,6 +33,7 @@ namespace Pokedex.Backend.Data
             {
                 
                 pokemon = await response.Content.ReadAsAsync<Pokemon>();
+                Console.WriteLine("Requested the api...");
             }
             return pokemon;
         }

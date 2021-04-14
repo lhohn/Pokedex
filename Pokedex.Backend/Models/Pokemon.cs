@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 using System.Text.Json.Serialization;
-using LitJson;
+
 
 namespace Pokedex.Backend.Models
 {
@@ -14,6 +13,7 @@ namespace Pokedex.Backend.Models
         public int Height { get; set; }
         public int Weight { get; set; }
         public List<PokemonAbility> Abilities { get; set; }
+        private static string path = @"C:\Users\Luis Laptop\source\repos\Pokedex.Backend\Pokedex.Backend\Data\tmp\";
         //public List<Sprite> Sprites { get; set; }
         public Sprites Sprites { get; set; }
         /*public class Sprite
@@ -22,7 +22,24 @@ namespace Pokedex.Backend.Models
            
 
         }*/
+      /*   public void DownloadSpite(string url)
+        {
+            using (WebClient client = new WebClient())
+            {
+                
+                client.DownloadFileAsync(new Uri(url), $@"{path}{url}");
+            }
+        }
+        public FileStream DisplaySpite(string url)
+        {
+            
 
+            if (!File.Exists(path + url))
+            {
+                DownloadSpite(url);
+            }
+            return  File.Open(path + url, FileMode.Open);
+        }*/
        
         public void Display()
         {
